@@ -14,5 +14,6 @@ public class AdvertCahannel extends BaseModel {
 
     @Column(name = "advert_channel_name")
     private String advertChannelName;
+    //dfsd
 
 }
