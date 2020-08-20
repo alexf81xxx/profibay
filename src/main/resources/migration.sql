@@ -20,11 +20,10 @@ CREATE TABLE public.master (
 
 CREATE TABLE public.employer_documents (
    id BIGSERIAL NOT NULL PRIMARY KEY,
-   employer_id int NOT NULL REFERENCES master(id),
    passport_num varchar(4) NOT NULL,
    passport_series varchar(6) NOT NULL,
    date_of_issue DATE NOT NULL,
-   department_code varchar(6) NOT NULL,
+   department_code varchar(7) NOT NULL,
    issued_by DATE NOT NULL,
    registration varchar(100) NOT NULL,
    sex varchar(6) NOT NULL,

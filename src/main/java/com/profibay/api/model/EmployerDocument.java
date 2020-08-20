@@ -15,20 +15,17 @@ import java.util.Date;
 public class EmployerDocument extends BaseModel {
 
 
-    @Column (name = "employer_id")
-    private int employerId;
-
     @Column (name = "passport_num")
-    private int passportNum;
+    private String passportNum;
 
     @Column (name = "passport_series")
-    private int passportSeries;
+    private String passportSeries;
 
     @Column (name = "date_of_issue")
     private Date dateOfIssue;
 
     @Column (name = "department_code")
-    private int departmentCode;
+    private String departmentCode;
 
     @Column (name = "issued_by")
     private Date issuedBy;
@@ -39,12 +36,22 @@ public class EmployerDocument extends BaseModel {
     @Column (name = "sex")
     private String sex;
 
-    @Column (name = "status")
-    private Statuses status;
-
     @Column (name = "employer_type")
     private EmployerType employerType;
 
-
-
+    @Override
+    public String toString() {
+        return "EmployerDocument{" +
+                "id="+getId()+"  "+
+                "created=" +getCreated()+ " "+
+                "passportNum='" + passportNum + '\'' +
+                ", passportSeries='" + passportSeries + '\'' +
+                ", dateOfIssue=" + dateOfIssue +
+                ", departmentCode='" + departmentCode + '\'' +
+                ", issuedBy=" + issuedBy +
+                ", registration='" + registration + '\'' +
+                ", sex='" + sex + '\'' +
+                ", employerType=" + employerType +
+                '}';
+    }
 }
