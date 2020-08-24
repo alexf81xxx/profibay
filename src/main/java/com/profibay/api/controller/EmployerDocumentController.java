@@ -57,13 +57,12 @@ public class EmployerDocumentController {
 //            x.setUpdated(LocalDateTime.now());
 //            x.setEmployerType(EmployerType.MASTER);
 //            x.setStatus(Statuses.ACTIVE);
-//
 //            employerDocumentList1.add(employerRepo.save(x));
 //        });
-//
+
+
 
         for (EmployerDocument x : employerDocumentList) {
-
             x.setCreated(LocalDateTime.now());
             x.setUpdated(LocalDateTime.now());
             x.setEmployerType(EmployerType.MASTER);
