@@ -1,6 +1,6 @@
 package com.profibay.api.model.enums;
 
-public enum EmployerType {
+public enum EmployerTypeEnum {
     HR,
     CALL_CENTER_OPERATOR,
     MASTER

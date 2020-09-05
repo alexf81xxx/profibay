@@ -1,7 +1,6 @@
 package com.profibay.api.model.enums;
 
-public enum ReasonCancellation {
-
+public enum ReasonCancellationEnum {
     DEPARTURE_OF_THE_HANDYMAN,
     PRICE_MONITORING,
     CLIENT_WILL_THINKING,
@@ -9,5 +8,4 @@ public enum ReasonCancellation {
     TECHNICAL_ERROR,
     HANDYMAN_MUST_CALL,
     ORDERED_FROM_COMPETITORS
-
 }

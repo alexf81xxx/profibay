@@ -2,7 +2,7 @@ package com.profibay.api.controller;
 
 
 import com.profibay.api.model.EmployerDocument;
-import com.profibay.api.model.enums.EmployerType;
+import com.profibay.api.model.enums.EmployerTypeEnum;
 import com.profibay.api.model.enums.Statuses;
 import com.profibay.api.repo.EmployerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ public class EmployerDocumentController {
 
         employerDocument.setCreated(LocalDateTime.now());
         employerDocument.setUpdated(LocalDateTime.now());
-        employerDocument.setEmployerType(EmployerType.MASTER);
+        employerDocument.setEmployerType(EmployerTypeEnum.MASTER);
         employerDocument.setStatus(Statuses.ACTIVE);
 
         System.out.println("11 " +employerDocument);
@@ -65,7 +65,7 @@ public class EmployerDocumentController {
         for (EmployerDocument x : employerDocumentList) {
             x.setCreated(LocalDateTime.now());
             x.setUpdated(LocalDateTime.now());
-            x.setEmployerType(EmployerType.MASTER);
+            x.setEmployerType(EmployerTypeEnum.MASTER);
             x.setStatus(Statuses.ACTIVE);
 
             employerDocumentList1.add(employerRepo.save(x));

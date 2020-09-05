@@ -1,7 +1,6 @@
 package com.profibay.api.model;
 
-import com.profibay.api.model.enums.EmployerType;
-import com.profibay.api.model.enums.Statuses;
+import com.profibay.api.model.enums.EmployerTypeEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -37,7 +36,7 @@ public class EmployerDocument extends BaseModel {
     private String sex;
 
     @Column (name = "employer_type")
-    private EmployerType employerType;
+    private EmployerTypeEnum employerType;
 
     @Override
     public String toString() {
