@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import java.util.Date;
 
 @Data
@@ -37,6 +38,9 @@ public class EmployerDocument extends BaseModel {
 
     @Column (name = "employer_type")
     private EmployerTypeEnum employerType;
+
+    @OneToOne (mappedBy = "employerDocument")
+    private Master master;
 
     @Override
     public String toString() {

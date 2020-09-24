@@ -2,7 +2,7 @@ package com.profibay.api.controller;
 
 
 import com.profibay.api.model.Client;
-import com.profibay.api.model.enums.Statuses;
+import com.profibay.api.model.enums.StatusesEnum;
 import com.profibay.api.repo.ClientRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +32,7 @@ public class ClientController {
 
         client.setCreated(LocalDateTime.now());
         client.setUpdated(LocalDateTime.now());
-        client.setStatus(Statuses.ACTIVE);
+        client.setStatus(StatusesEnum.ACTIVE);
 
         Client savedClient = clientRepo.save(client);
         return ResponseEntity.ok(savedClient);

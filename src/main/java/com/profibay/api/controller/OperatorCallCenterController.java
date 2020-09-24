@@ -2,7 +2,7 @@ package com.profibay.api.controller;
 
 
 import com.profibay.api.model.OperatorCallCenter;
-import com.profibay.api.model.enums.Statuses;
+import com.profibay.api.model.enums.StatusesEnum;
 import com.profibay.api.repo.OperatorCallCenterRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.lang.management.OperatingSystemMXBean;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -32,7 +31,7 @@ public class OperatorCallCenterController {
 
         operatorCallCenter.setCreated(LocalDateTime.now());
         operatorCallCenter.setUpdated(LocalDateTime.now());
-        operatorCallCenter.setStatus(Statuses.ACTIVE);
+        operatorCallCenter.setStatus(StatusesEnum.ACTIVE);
 
         OperatorCallCenter operatorCallCenter1 = operatorCallCenterRepo.save(operatorCallCenter);
 
@@ -75,7 +74,7 @@ public class OperatorCallCenterController {
         Integer operatorCallCenter1 = operatorCallCenterRepo.insert(operatorCallCenter.getName(), operatorCallCenter.getSurname(),
         operatorCallCenter.getPatronymic(), operatorCallCenter.getBirthday(),
         operatorCallCenter.getSex(), operatorCallCenter.getPhone1(), operatorCallCenter.getPhone2(), operatorCallCenter.getCity(), operatorCallCenter.getImg(),
-        Statuses.ACTIVE.toString(),
+        StatusesEnum.ACTIVE.toString(),
         operatorCallCenter.getNote_about_operator(), operatorCallCenter.getRating(), dateNow, dateNow,
         operatorCallCenter.getPatronymic());
 

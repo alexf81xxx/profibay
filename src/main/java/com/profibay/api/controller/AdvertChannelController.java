@@ -1,7 +1,7 @@
 package com.profibay.api.controller;
 
 import com.profibay.api.model.AdvertCahannel;
-import com.profibay.api.model.enums.Statuses;
+import com.profibay.api.model.enums.StatusesEnum;
 import com.profibay.api.repo.AdvertRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +31,7 @@ public class AdvertChannelController {
 
         advertCahannel.setCreated(LocalDateTime.now()); // Присвоили время создания
         advertCahannel.setUpdated(LocalDateTime.now()); // Присвоил время updated
-        advertCahannel.setStatus(Statuses.ACTIVE); //Статус
+        advertCahannel.setStatus(StatusesEnum.ACTIVE); //Статус
         return ResponseEntity.ok(advertRepo.save(advertCahannel)); // ResponseEntity.ok - Для оповещения при помощи ответов сервера
     }
 }

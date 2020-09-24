@@ -16,18 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class TypeOfWorkController {
 
 
-    private final TypeOfWorkRepo typeOfWork;
+    private final TypeOfWorkRepo typeOfWorkRepo;
 
     @Autowired
     public TypeOfWorkController(TypeOfWorkRepo typeOfWork) {
-        this.typeOfWork = typeOfWork;
+        this.typeOfWorkRepo = typeOfWork;
     }
 
 
     @PostMapping (name = "add")
     private ResponseEntity addTypeOfWork (@RequestBody TypeOfWork typeOfWorktSave)
 {
-    return ResponseEntity.ok(typeOfWork.save(typeOfWorktSave));
+        return ResponseEntity.ok(typeOfWorkRepo.save(typeOfWorktSave));
 }
+
+
 
 }

@@ -1,6 +1,6 @@
 package com.profibay.api.model.enums;
 
-public enum Statuses {
+public enum StatusesEnum {
     ACTIVE,
     BANNED,
     NOTACTIVE

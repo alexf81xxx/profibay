@@ -17,6 +17,18 @@ CREATE TABLE public.master (
     note_about_master varchar(255) NOT NULL,
     age float NOT NULL DEFAULT 3.5
 );
+alter table master drop column age;
+alter table master
+    add created date not null;
+
+alter table master
+    add updated date;
+
+alter table master
+    add rating int NOT NULL ;
+alter table master drop column name2;
+alter table master alter column rating type float using rating::float;
+
 
 CREATE TABLE public.employer_documents (
    id BIGSERIAL NOT NULL PRIMARY KEY,
@@ -127,6 +139,18 @@ ALTER TABLE operator_call_center ADD COLUMN created date,
 ADD COLUMN updated date;
 
 alter table operator_call_center alter column patronyic drop not null;
+
+CREATE TABLE public.master_review (
+  id BIGSERIAL NOT NULL PRIMARY KEY ,
+  review varchar(255) NOT NULL,
+  created date NOT NULL ,
+  updated date NOT NULL,
+  status varchar(15),
+  master_id bigint NOT NULL
+);
+alter table master_review
+    add constraint master_review_master_id_fk
+        foreign key (master_id) references master;
 
 
 

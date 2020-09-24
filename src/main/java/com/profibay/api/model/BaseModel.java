@@ -1,6 +1,7 @@
 package com.profibay.api.model;
 
-import com.profibay.api.model.enums.Statuses;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.profibay.api.model.enums.StatusesEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
@@ -16,7 +17,9 @@ public class BaseModel {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long id;
+
 
     @CreatedDate
     @Column(name = "created")
@@ -27,7 +30,7 @@ public class BaseModel {
 
     @Enumerated(EnumType.STRING) // Переделывает ENUM в строку для БД
     @Column(name = "status")
-    private Statuses status;
+    private StatusesEnum status;
 
 
 

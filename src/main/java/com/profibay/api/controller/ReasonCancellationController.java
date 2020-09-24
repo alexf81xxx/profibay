@@ -3,7 +3,7 @@ package com.profibay.api.controller;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.profibay.api.model.ReasonCancellation;
 import com.profibay.api.model.enums.ReasonCancellationEnum;
-import com.profibay.api.model.enums.Statuses;
+import com.profibay.api.model.enums.StatusesEnum;
 import com.profibay.api.repo.ReasonCancellationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +40,7 @@ public class ReasonCancellationController  {
                     {
                         reason.setCreated(LocalDateTime.now());
                         reason.setUpdated(LocalDateTime.now());
-                        reason.setStatus(Statuses.ACTIVE);
+                        reason.setStatus(StatusesEnum.ACTIVE);
                         reason.setReasonCancellation(ReasonCancellationEnum.DEPARTURE_OF_THE_HANDYMAN);
                         reasonCancellations2.add(reasonCancellationRepo.save(reason));
                     }
