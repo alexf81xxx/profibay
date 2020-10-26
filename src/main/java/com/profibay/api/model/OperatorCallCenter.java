@@ -4,9 +4,9 @@ package com.profibay.api.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 
@@ -39,13 +39,22 @@ public class OperatorCallCenter extends BaseModel {
     @Column(name = "city")
     private String city;
 
-    @Column(name = "img")
-    private String img;
-
     @Column(name = "note_about_operator")
     private String note_about_operator;
 
     @Column(name = "rating")
     private int rating;
+
+    @ManyToMany
+    @JoinTable (
+            name = "operator_call_center_to_reason_cancellation",
+            joinColumns = @JoinColumn (name = "operator_call_center_id"),
+            inverseJoinColumns = @JoinColumn (name = "reason_cancellation_id")
+    )
+    private List<ReasonCancellation> reasonCancellationList;
+
+
+
+
 
 }

@@ -73,6 +73,10 @@ public class Master extends BaseModel {
     inverseJoinColumns = @JoinColumn(name = "type_of_work_id"))
     private List<TypeOfWork> typeOfWorks;
 
+    @OneToOne ()
+    @JoinColumn (name = "id_employer_img")
+    private EmployerImg idEmployerImg;
+
     public Master(String name, String surname, String patronymic, Date birthday, String sex, String phone1, String phone2, String city, TypeOfEmploymentEnum typeOfEmployment, boolean car, String preferredArea, String img, String noteAboutMaster, float rating) {
         this.name = name;
         this.surname = surname;

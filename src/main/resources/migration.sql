@@ -35,6 +35,9 @@ alter table master
 alter table master
     add hr_id bigint;
 alter table master alter column hr_id set not null;
+alter table master
+    add id_employer_img bigint not null;
+
 
 
 
@@ -71,9 +74,9 @@ CREATE TABLE public.master_to_type_of_work
 );
 
 
-DROP TABLE IF EXISTS public.advert_channel;
 
-CREATE TABLE public.advert_channel
+
+CREATE TABLE public.sourse
 (
     id                  BIGSERIAL   NOT NULL PRIMARY KEY,
     advert_channel_name varchar(25) NOT NULL,
@@ -162,6 +165,7 @@ ALTER TABLE operator_call_center
 
 alter table operator_call_center
     alter column patronyic drop not null;
+alter table operator_call_center drop column img;
 
 CREATE TABLE public.master_review
 (
@@ -223,6 +227,10 @@ create table operator_call_center_to_reason_cancellation
         constraint reason_cancellation
             references reason_cancellation
 );
+alter table operator_call_center_to_reason_cancellation
+    add reason_count int not null;
+
+
 
 
 
