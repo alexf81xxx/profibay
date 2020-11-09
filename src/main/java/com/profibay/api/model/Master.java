@@ -1,6 +1,7 @@
 package com.profibay.api.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.profibay.api.interfaces.EmployerEntityIntarface;
 import com.profibay.api.model.enums.TypeOfEmploymentEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class Master extends BaseModel {
+public class Master extends BaseModel implements EmployerEntityIntarface {
 
     @Column(name = "name")
     private String name;
@@ -73,7 +74,7 @@ public class Master extends BaseModel {
     inverseJoinColumns = @JoinColumn(name = "type_of_work_id"))
     private List<TypeOfWork> typeOfWorks;
 
-    @OneToOne ()
+    @OneToOne (cascade = CascadeType.ALL)
     @JoinColumn (name = "id_employer_img")
     private EmployerImg idEmployerImg;
 

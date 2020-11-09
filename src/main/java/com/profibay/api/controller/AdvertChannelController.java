@@ -32,6 +32,7 @@ public class AdvertChannelController {
         advertCahannel.setCreated(LocalDateTime.now()); // Присвоили время создания
         advertCahannel.setUpdated(LocalDateTime.now()); // Присвоил время updated
         advertCahannel.setStatus(StatusesEnum.ACTIVE); //Статус
+
         return ResponseEntity.ok(advertRepo.save(advertCahannel)); // ResponseEntity.ok - Для оповещения при помощи ответов сервера
     }
 }

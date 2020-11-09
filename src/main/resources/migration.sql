@@ -139,6 +139,8 @@ CREATE TABLE public.client
     status      varchar(20)  NOT NULL
 );
 
+
+
 CREATE TABLE public.operator_call_center
 (
     id                  BIGSERIAL    NOT NULL PRIMARY KEY,
@@ -166,6 +168,15 @@ ALTER TABLE operator_call_center
 alter table operator_call_center
     alter column patronyic drop not null;
 alter table operator_call_center drop column img;
+
+alter table operator_call_center
+    add id_employer_img bigint;
+
+alter table operator_call_center
+    add constraint to_employer_img__fk
+        foreign key (id_employer_document_img) references employer_img;
+
+
 
 CREATE TABLE public.master_review
 (

@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
-@Entity (name = "employer_documents")
+@Entity (name = "employer_img")
 public class EmployerImg {
 
     @Id
@@ -21,10 +21,7 @@ public class EmployerImg {
     private String employerImg;
 
     @OneToOne (mappedBy = "idEmployerImg")
-    private Master masterId;
-
-
-
+    private EmployerDocument employerDocumentId;
 
 
 }

@@ -73,7 +73,7 @@ public class OperatorCallCenterController {
 
         Integer operatorCallCenter1 = operatorCallCenterRepo.insert(operatorCallCenter.getName(), operatorCallCenter.getSurname(),
         operatorCallCenter.getPatronymic(), operatorCallCenter.getBirthday(),
-        operatorCallCenter.getSex(), operatorCallCenter.getPhone1(), operatorCallCenter.getPhone2(), operatorCallCenter.getCity(), operatorCallCenter.getImg(),
+        operatorCallCenter.getSex(), operatorCallCenter.getPhone1(), operatorCallCenter.getPhone2(), operatorCallCenter.getCity(), operatorCallCenter.getSurname(),
         StatusesEnum.ACTIVE.toString(),
         operatorCallCenter.getNote_about_operator(), operatorCallCenter.getRating(), dateNow, dateNow,
         operatorCallCenter.getPatronymic());

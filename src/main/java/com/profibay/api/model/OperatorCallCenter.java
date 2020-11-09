@@ -1,6 +1,8 @@
 package com.profibay.api.model;
 
 
+import com.profibay.api.interfaces.EmployerEntityIntarface;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,7 +14,9 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class OperatorCallCenter extends BaseModel {
+@AllArgsConstructor
+
+public class OperatorCallCenter extends BaseModel implements EmployerEntityIntarface {
 
 
     @Column(name = "name")
@@ -44,6 +48,8 @@ public class OperatorCallCenter extends BaseModel {
 
     @Column(name = "rating")
     private int rating;
+
+
 
     @ManyToMany
     @JoinTable (

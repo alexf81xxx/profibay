@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import java.util.Date;
 
@@ -39,8 +40,9 @@ public class EmployerDocument extends BaseModel {
     @Column (name = "employer_type")
     private EmployerTypeEnum employerType;
 
-    @OneToOne (mappedBy = "employerDocument")
-    private Master master;
+    @OneToOne ()
+    @JoinColumn (name = "id_employer_img")
+    private EmployerImg idEmployerImg;
 
     @Override
     public String toString() {
