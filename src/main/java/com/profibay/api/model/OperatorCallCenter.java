@@ -49,6 +49,10 @@ public class OperatorCallCenter extends BaseModel implements EmployerEntityIntar
     @Column(name = "rating")
     private int rating;
 
+    @OneToOne (cascade = CascadeType.ALL)
+    @JoinColumn (name = "id_employer_document")
+    private EmployerImg operatorCallCenterImg;
+
 
 
     @ManyToMany

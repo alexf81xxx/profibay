@@ -2,6 +2,7 @@ package com.profibay.api.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.profibay.api.interfaces.EmployerEntityIntarface;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,8 +21,11 @@ public class EmployerImg {
     @Column (name = "img")
     private String employerImg;
 
-    @OneToOne (mappedBy = "idEmployerImg")
-    private EmployerDocument employerDocumentId;
+    @OneToOne (mappedBy = "operatorCallCenterImg", cascade = CascadeType.ALL)
+    private OperatorCallCenter operatorCallCenterImg;
+
+    @OneToOne (mappedBy = "masterImg", cascade = CascadeType.ALL)
+    private Master masterImg;
 
 
 }
